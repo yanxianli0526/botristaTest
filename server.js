@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import { db } from "./app/models/index.js";
 import authRoutes from "./app/routes/auth.routes.js";
-import userRoutes from "./app/routes/user.routes.js";
 import productRoutes from "./app/routes/product.routes.js";
 import orderRoutes from "./app/routes/order.routes.js";
 
@@ -37,7 +36,6 @@ app.get("/", (req, res) => {
 
 // routes
 authRoutes(app);
-userRoutes(app);
 productRoutes(app);
 orderRoutes(app);
 
