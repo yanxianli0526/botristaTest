@@ -16,7 +16,8 @@ export const checkProductsStockIsEnough = async (req, res, next) => {
         productData[d.id] = data;
       }
     });
-
+    // 怕有誤會解釋一下這邊為什麼不直接用for迴圈一個一個FindOne拿訂貨數和庫存進行比較
+    // 主要是因為不想分次FindOne 造成多次和db發請求的狀況發生
     const product = await Product.findAll({
       where: {
         id: {
